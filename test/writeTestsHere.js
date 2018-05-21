@@ -57,6 +57,11 @@ describe('all tests for your functions', () => {
   })
 
   // forEach
+  xdescribe('forEach tests'), () => {
+    const subFunc = allFunctions.forEach;
+    // should work with array
+    // should work with object
+  }
 
   // filter
 

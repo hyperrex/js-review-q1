@@ -38,8 +38,16 @@ function calculateSum(array) {
  * @param2: function
  * @return: N/A
  **/
-function forEach(coll, func) {
-
+function forEach(collection, callback) {
+  if (typeof collection === 'object' && collection !== null) {
+    for (let key in collection) {
+      callback(collection[key]);
+    }
+  } else {
+    for (let i = 0; i < collection.length; i++) {
+      callback(collection[i]);
+    }
+  }
 }
 
 /**
