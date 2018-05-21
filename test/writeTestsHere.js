@@ -60,10 +60,9 @@ describe('all tests for your functions', () => {
   describe('map tests', () => {
     const subFunc = allFunctions.map;
     it('should not mutate the original array', () => {
-      const testInput = [1, 2, 3];
+      const array = [1, 2, 3];
       const double = function(num) { return num * 2 };
-      subFunc(testInput, double);
-      assert.deepEqual(testInput, [1, 2, 3]);
+      assert.notDeepEqual(subFunc(array, double), array);
     });
     it('should return a new array with every element doubled', () => {
       const double = function(num) { return num * 2 };
@@ -80,13 +79,20 @@ describe('all tests for your functions', () => {
   });
 
   // filter
-  xdescribe('filter tests', () => {
+  describe('filter tests', () => {
     const subFunc = allFunctions.filter;
     it('should not mutate the original array', () => {
-      const testInput = [1, 2, 3];
-      const odd = function(num) { return num % 2 !== 0; };
-      subFunc(testInput, odd);
-      assert.deepEqual(testInput, [1, 2, 3]);
+      const array = [1, 2, 3];
+      const isOdd = function(num) { return num % 2 !== 0; };
+      assert.notDeepEqual(subFunc(array, isOdd), array);
+    });
+    it('should return only odd numbers', () => {
+      const isOdd = function(num) { return num % 2 !== 0; };
+      assert.deepEqual(subFunc([1, 2, 3], isOdd), [1, 3]);
+    });
+    it('should return only words longer than 4 letters', () => {
+      const longWords = function(word) { return word.length > 4; };
+      assert.deepEqual(subFunc(['apple', 'pear', 'banana', 'guava'], longWords), ['apple', 'banana', 'guava']);
     });
   });
 

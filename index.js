@@ -31,9 +31,15 @@ function calculateSum(array) {
   return array.reduce((acc, num) => acc += num, 0);
 }
 
-//don't look up the answer!
+/**
+ * @name: map
+ * @description applies a callback function to every element in an array and returns the result in a new array
+ * @param1: array
+ * @param2: function
+ * @return: array
+ **/
 function map(arr, callback){
-  let output = [];
+  const output = [];
   arr.forEach((el) => {
     output.push(callback(el));
   });
@@ -48,8 +54,14 @@ function map(arr, callback){
  * @param1: collection
  * @return: array
  **/
-function filter() {
-
+function filter(arr, callback) {
+  const output = [];
+  arr.forEach((el) => {
+    if (callback(el)) {
+      output.push(el);
+    }
+  });
+  return output;
 }
 
 /**
