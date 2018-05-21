@@ -28,27 +28,19 @@ function subtract(num1, num2) {
  * @return: number
  **/
 function calculateSum(array) {
-  return array.reduce((acc, num) => acc *= num, 1);
+  return array.reduce((acc, num) => acc += num, 0);
 }
 
-/**
- * @name: forEach
- * @description iterates through an array or object and executes function on each element
- * @param1: collection
- * @param2: function
- * @return: N/A
- **/
-function forEach(collection, callback) {
-  if (typeof collection === 'object' && collection !== null) {
-    for (let key in collection) {
-      callback(collection[key]);
-    }
-  } else {
-    for (let i = 0; i < collection.length; i++) {
-      callback(collection[i]);
-    }
-  }
+//don't look up the answer!
+function map(arr, callback){
+  let output = [];
+  arr.forEach((el) => {
+    output.push(callback(el));
+  });
+  return output;
 }
+//map([1,2,3],3)  => [3,6,9]
+//map([2,3,4],-2) => [-4,-6,-8]
 
 /**
  * @name: filter
@@ -66,8 +58,12 @@ function filter() {
  * @param1: string
  * @return: string
  **/
-function reverseLettersInPlace() {
-
+function reverseLettersInPlace(str) {
+  split = str.split(' ');
+  split.map((word) => {
+    return word.split('').reverse().join('');
+  });
+  return split.join(' ');
 }
 //reverseLettersInPlace("Hi justin") => "iH nitsuj"
 //reverseLettersInPlace(" A simple challenge! ") => => " A elpmis !egnellahc "
@@ -144,11 +140,30 @@ function countVowels() {
 //countVowels('apple')  => 2
 //countVowels('tomato') => 3
 
+/** BONUS
+ * @name: forEach
+ * @description iterates through an array or object and executes function on each element
+ * @param1: collection
+ * @param2: function
+ * @return: N/A
+ **/
+function forEach(collection, callback) {
+  if (typeof collection === 'object' && collection !== null) {
+    for (let key in collection) {
+      callback(collection[key]);
+    }
+  } else {
+    for (let i = 0; i < collection.length; i++) {
+      callback(collection[i]);
+    }
+  }
+}
+
 module.exports = {
   add: add,
   subtract: subtract,
   calculateSum: calculateSum,
-  forEach: forEach,
+  map: map,
   filter: filter,
   reverseLettersInPlace: reverseLettersInPlace,
   allSimpleCombinations: allSimpleCombinations,
@@ -156,5 +171,6 @@ module.exports = {
   returnLongestWord: returnLongestWord,
   isPrime: isPrime,
   returnCoinBreakdown: returnCoinBreakdown,
-  countVowels: countVowels
+  countVowels: countVowels,
+  forEach: forEach
 };
