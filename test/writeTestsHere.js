@@ -28,8 +28,8 @@ describe('all tests for your functions', () => {
       assert.equal(subFunc(100, 87), 13);
     })
     it('should subtract negative numbers', () => {
-      assert.equal(subFunc(-1, -3), 2)
-      assert.equal(subFunc(-39, -11), -28)
+      assert.equal(subFunc(-1, -3), 2);
+      assert.equal(subFunc(-39, -11), -28);
     })
     it('should output number', () => {
       assert.isNumber(subFunc(8, 1));
@@ -37,6 +37,24 @@ describe('all tests for your functions', () => {
   })
 
   // calculateSum
+  describe('multiplication tests', () => {
+    const subFunc = allFunctions.calculateSum;
+
+    it('should multiply positive numbers', () => {
+      assert.equal(subFunc([1, 3, 5]), 15);
+      assert.equal(subFunc([10, 7]), 70);
+    })
+    it('should multiply negative numbers', () => {
+      assert.equal(subFunc([-6, -3]), 18);
+      assert.equal(subFunc([-9, 11]), -99);
+    })
+    it('should return 0 when one of the inputs is 0', () => {
+      assert.equal(subFunc([0, 1, 2]), 0);
+    })
+    it('should output number', () => {
+      assert.isNumber(subFunc([1, 2, 3]));
+    });
+  })
 
   // forEach
 

@@ -22,43 +22,41 @@ function subtract(num1, num2) {
 
 /**
  * @name: calculateSum
- * @description 
- * @param1:
- * @param2:
- * @return:
+ * @description returns the sum of every number in the array
+ * @param1: num1
+ * @param2: num2
+ * @return: number
  **/
 function calculateSum(array) {
-  //WRITE YOUR CODE HERE
+  return array.reduce((acc, num) => acc *= num, 1);
 }
 
 /**
  * @name: forEach
- * @description 
- * @param1:
- * @param2:
- * @return:
+ * @description iterates through an array or object and executes function on each element
+ * @param1: collection
+ * @param2: function
+ * @return: N/A
  **/
-function forEach() {
+function forEach(coll, func) {
 
 }
 
 /**
  * @name: filter
- * @description 
- * @param1:
- * @param2:
- * @return:
+ * @description returns a new array containing only truthy elements
+ * @param1: collection
+ * @return: array
  **/
 function filter() {
 
 }
 
 /**
- * @name: reverseLettersInPlac
- * @description 
- * @param1:
- * @param2:
- * @return:
+ * @name: reverseLettersInPlace
+ * @description returns every word in a string reversed, but in it's original place
+ * @param1: string
+ * @return: string
  **/
 function reverseLettersInPlace() {
 
@@ -68,10 +66,9 @@ function reverseLettersInPlace() {
 
 /**
  * @name: allSimpleCombinations
- * @description 
- * @param1:
- * @param2:
- * @return:
+ * @description returns an array containing every single combination of adjacent letters in the input string
+ * @param1: string
+ * @return: array
  **/
 function allSimpleCombinations() {
 
@@ -81,23 +78,21 @@ function allSimpleCombinations() {
 
 /**
  * @name: alphabeticalOrder
- * @description 
- * @param1:
- * @param2:
- * @return:
+ * @description returns every letters in a word in alphabetical order
+ * @param1: string
+ * @return: string
  **/
 function alphabeticalOrder() {
 
 }
-//allSimpleCombinations('talk') => ''
+//allSimpleCombinations('talk') => 'aklt'
 //allSimpleCombinations('sailormoon')  => 'ailmnooors'
 
 /**
  * @name: returnLongestWord
- * @description 
- * @param1:
- * @param2:
- * @return:
+ * @description returns the longest word in a string
+ * @param1: string
+ * @return: string
  **/
 function returnLongestWord() {
 
@@ -107,10 +102,9 @@ function returnLongestWord() {
 
 /**
  * @name: isPrime
- * @description 
- * @param1:
- * @param2:
- * @return:
+ * @description returns true if number is prime; false if not
+ * @param1: number
+ * @return: boolean
  **/
 function isPrime() {
 
@@ -120,10 +114,9 @@ function isPrime() {
 
 /**
  * @name: returnCoinBreakdown
- * @description 
- * @param1:
- * @param2:
- * @return:
+ * @description returns an object whose key:value pairs approximates the input number in United States coins.
+ * @param1: number
+ * @return: object
  **/
 function returnCoinBreakdown() {
 
@@ -133,10 +126,9 @@ function returnCoinBreakdown() {
 
 /**
  * @name: countVowels
- * @description 
- * @param1:
- * @param2:
- * @return:
+ * @description returns the number of vowels in a string
+ * @param1: string
+ * @return: number
  **/
 function countVowels() {
 
