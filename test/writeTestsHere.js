@@ -97,14 +97,16 @@ describe('all tests for your functions', () => {
   });
 
   // reverseLettersInPlace
-  xdescribe('reverseLettersInPlace tests', () => {
+  describe('reverseLettersInPlace tests', () => {
     const subFunc = allFunctions.reverseLettersInPlace;
     it('should output a string', () => {
       assert.isString(subFunc('Hello world'));
     });
     it('should reverse letters while keeping words in place', () => {
-      assert.equal(subFunc('Hello World'), 'olleH dlrow');
+      assert.equal(subFunc('Hello World'), 'olleH dlroW');
       assert.equal(subFunc('The dog barks at midnight'), 'ehT god skrab ta thgindim');
+      assert.equal(subFunc(' A simple challenge! '), ' A elpmis !egnellahc ');
+      assert.equal(subFunc('Hi Justin'), 'iH nitsuJ');
     });
   });
 
@@ -129,9 +131,15 @@ describe('all tests for your functions', () => {
   });
 
   // returnLongestWord
-  xdescribe('returnLongestWord tests', () => {
+  describe('returnLongestWord tests', () => {
     const subFunc = allFunctions.returnLongestWord;
-
+    it('should output a string', () => {
+      assert.isString(subFunc('California Über Alles'));
+    });
+    it('should return the longest word', () => {
+      assert.equal(subFunc('Every day is like Sunday'), 'Sunday');
+      assert.equal(subFunc('I went out to the forrest and caught a hundred thousand fireflies'), 'fireflies');
+    });
   });
 
   // isPrime

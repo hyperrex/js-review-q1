@@ -71,11 +71,10 @@ function filter(arr, callback) {
  * @return: string
  **/
 function reverseLettersInPlace(str) {
-  split = str.split(' ');
-  split.map((word) => {
+  let reversed = str.split(' ').map((word) => {
     return word.split('').reverse().join('');
   });
-  return split.join(' ');
+  return reversed.join(' ');
 }
 //reverseLettersInPlace("Hi justin") => "iH nitsuj"
 //reverseLettersInPlace(" A simple challenge! ") => => " A elpmis !egnellahc "
@@ -110,8 +109,15 @@ function alphabeticalOrder() {
  * @param1: string
  * @return: string
  **/
-function returnLongestWord() {
-
+function returnLongestWord(str) {
+  let words = str.split(' ');
+  let longest = words[0];
+  for (let i = 1; i < words.length; i++) {
+    if (words[i].length > longest.length) {
+      longest = words[i];
+    }
+  }
+  return longest;
 }
 //returnLongestWord('short sentence alphabetical') => 'alphabetical'
 //returnLongestWord('cute pretty beautiful pulchritudinous') => 'pulchritudinous'
