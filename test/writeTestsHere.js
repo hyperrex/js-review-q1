@@ -3,6 +3,7 @@
 const allFunctions = require('../index');
 const assert = require('chai').assert;
 const should = require('chai').should;
+const expect = require('chai').expect;
 const chaiIterator = require('chai-iterator');
 // chai.use(chaiIterator);
 
@@ -111,7 +112,7 @@ describe('all tests for your functions', () => {
   });
 
   // allSimpleCombinations
-  xdescribe('allSimpleCombinations tests', () => {
+  describe('allSimpleCombinations tests', () => {
     const subFunc = allFunctions.allSimpleCombinations;
     it('should output an array', () => {
       assert.isArray(subFunc('test'));
@@ -120,7 +121,7 @@ describe('all tests for your functions', () => {
       assert.deepEqual(subFunc('test'), ['t', 'te', 'tes', 'test', 'e', 'es', 'est', 's', 'st', 't']);
     });
     it('should create an array with all simple combinations', () => {
-      assert.equal(subFunc('test'), ['t', 'te', 'tes', 'test', 'e', 'es', 'est', 's', 'st', 't']);
+      assert.deepEqual(subFunc('cat'), ['c', 'ca', 'cat', 'a', 'at', 't']);
     });
   });
 
@@ -149,7 +150,7 @@ describe('all tests for your functions', () => {
   });
 
   // isPrime
-describe('isPrime tests', () => {
+  describe('isPrime tests', () => {
     const subFunc = allFunctions.isPrime;
     it('should output a boolean', () => {
       assert.isBoolean(subFunc(5, true));
@@ -165,21 +166,26 @@ describe('isPrime tests', () => {
   });
 
   // returnCoinBreakdown
-  xdescribe('returnCoinBreakdown tests', () => {
+  describe('returnCoinBreakdown tests', (num) => {
     const subFunc = allFunctions.returnCoinBreakdown;
-
+    it('should return an object that contains the number of coins that equal the input number', () => {
+      assert.deepEqual(subFunc(46), {25:1, 10:2, 5:0, 1:1});
+      assert.deepEqual(subFunc(19), {25:0, 10:1, 5:1, 1:4});
+      assert.deepEqual(subFunc(82), {25:3, 10:0, 5:1, 1:2});
+    });
   });
 
   // countVowels
-  xdescribe('countVowels tests', () => {
+  xdescribe('countVowels tests', (str) => {
     const subFunc = allFunctions.countVowels;
 
   });
 
   // forEach
-  xdescribe('forEach tests', () => {
+  describe('forEach tests', () => {
     const subFunc = allFunctions.forEach;
-    // should work with array
-    // should work with object
+    it('should be a function', function() {
+      expect(subFunc).to.be.an.instanceOf(Function);
+    });
   });
 });
