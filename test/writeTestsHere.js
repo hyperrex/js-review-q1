@@ -125,9 +125,15 @@ describe('all tests for your functions', () => {
   });
 
   // alphabeticalOrder
-  xdescribe('alphabeticalOrder tests', () => {
+  describe('alphabeticalOrder tests', () => {
     const subFunc = allFunctions.alphabeticalOrder;
-
+    it('should output a string', () => {
+      assert.isString(subFunc('donuts'));
+    });
+    it('should return the letters of the word sorted in alphabetical order', () => {
+      assert.equal(subFunc('talk'), 'aklt');
+      assert.equal(subFunc('gossamer'), 'aegmorss');
+    });
   });
 
   // returnLongestWord
@@ -143,9 +149,19 @@ describe('all tests for your functions', () => {
   });
 
   // isPrime
-  xdescribe('isPrime tests', () => {
+describe('isPrime tests', () => {
     const subFunc = allFunctions.isPrime;
-
+    it('should output a boolean', () => {
+      assert.isBoolean(subFunc(5, true));
+    });
+    it('should return true if the number is a prime', () => {
+      assert.equal(subFunc(5), true);
+      assert.equal(subFunc(7), true);
+    });
+    it('should return false if the number is not prime', () => {
+      assert.equal(subFunc(12), false);
+      assert.equal(subFunc(4), false);
+    });
   });
 
   // returnCoinBreakdown

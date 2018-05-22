@@ -97,8 +97,8 @@ function allSimpleCombinations() {
  * @param1: string
  * @return: string
  **/
-function alphabeticalOrder() {
-
+function alphabeticalOrder(word) {
+  return word.toLowerCase().split('').sort().join('');
 }
 //allSimpleCombinations('talk') => 'aklt'
 //allSimpleCombinations('sailormoon')  => 'ailmnooors'
@@ -128,8 +128,10 @@ function returnLongestWord(str) {
  * @param1: number
  * @return: boolean
  **/
-function isPrime() {
-
+function isPrime(num) {
+  for(let i = 2; i < num; i++)
+    if(num % i === 0) return false;
+  return true;
 }
 //isPrime(7)  => true
 //isPrime(12) => false
