@@ -1,33 +1,41 @@
-// require('core-js/es6/symbol');
-// require('core-js/fn/symbol/iterator');
 const allFunctions = require('../index');
 const assert = require('chai').assert;
-const should = require('chai').should;
 const expect = require('chai').expect;
-const chaiIterator = require('chai-iterator');
+// const chaiIterator = require('chai-iterator');
+// require('core-js/es6/symbol');
+// require('core-js/fn/symbol/iterator');
 // chai.use(chaiIterator);
 
 describe('all tests for your functions', () => {
 
   // add
   describe('add tests', () => {
-    const addFunc = allFunctions.add;
-    it('should add positive numbers', () => {
-      assert.equal(addFunc(1, 3), 4);
-      assert.equal(addFunc(8, 2), 10);
-    });
-    it('should add negative numbers', () => {
-      assert.equal(addFunc(-1, -3), -4);
-      assert.equal(addFunc(-10, -3), -13);
+    const subFunc = allFunctions.add;
+    it('should be a function', function() {
+      expect(subFunc).to.be.an.instanceOf(Function);
     });
     it('should output a number', () => {
-      assert.isNumber(addFunc(5, 5));
+      assert.isNumber(subFunc(5, 5));
+    });
+    it('should add positive numbers', () => {
+      assert.equal(subFunc(1, 3), 4);
+      assert.equal(subFunc(8, 2), 10);
+    });
+    it('should add negative numbers', () => {
+      assert.equal(subFunc(-1, -3), -4);
+      assert.equal(subFunc(-10, -3), -13);
     });
   });
 
   // subtract
   describe('subtract tests', () => {
     const subFunc = allFunctions.subtract;
+    it('should be a function', function() {
+      expect(subFunc).to.be.an.instanceOf(Function);
+    });
+    it('should output a number', () => {
+      assert.isNumber(subFunc(8, 1));
+    });
     it('should subtract positive numbers', () => {
       assert.equal(subFunc(1, 3), -2);
       assert.equal(subFunc(100, 87), 13);
@@ -36,14 +44,17 @@ describe('all tests for your functions', () => {
       assert.equal(subFunc(-1, -3), 2);
       assert.equal(subFunc(-39, -11), -28);
     });
-    it('should output a number', () => {
-      assert.isNumber(subFunc(8, 1));
-    });
   });
 
   // calculateSum
   describe('calculateSum tests', () => {
     const subFunc = allFunctions.calculateSum;
+    it('should be a function', function() {
+      expect(subFunc).to.be.an.instanceOf(Function);
+    });
+    it('should output a number', () => {
+      assert.isNumber(subFunc([1, 2, 3]), 3);
+    });
     it('should sum positive array', () => {
       assert.equal(subFunc([1, 3, 5]), 9);
       assert.equal(subFunc([10, 7]), 17);
@@ -52,14 +63,18 @@ describe('all tests for your functions', () => {
       assert.equal(subFunc([-6, -3]), -9);
       assert.equal(subFunc([-9, 11]), 2);
     });
-    it('should output a number', () => {
-      assert.isNumber(subFunc([1, 2, 3]));
-    });
   });
 
   // map
   describe('map tests', () => {
     const subFunc = allFunctions.map;
+    it('should be a function', function() {
+      expect(subFunc).to.be.an.instanceOf(Function);
+    });
+    it('should output an array', () => {
+      const double = function(num) { return num * 2 };
+      assert.isArray(subFunc([1, 2, 3], double), [2, 4, 6]);
+    });
     it('should not mutate the original array', () => {
       const array = [1, 2, 3];
       const double = function(num) { return num * 2 };
@@ -82,6 +97,13 @@ describe('all tests for your functions', () => {
   // filter
   describe('filter tests', () => {
     const subFunc = allFunctions.filter;
+    it('should be a function', function() {
+      expect(subFunc).to.be.an.instanceOf(Function);
+    });
+    it('should output an array', () => {
+      const isOdd = function(num) { return num % 2 !== 0; };
+      assert.isArray(subFunc([1, 2, 3], isOdd));
+    });
     it('should not mutate the original array', () => {
       const array = [1, 2, 3];
       const isOdd = function(num) { return num % 2 !== 0; };
@@ -100,6 +122,9 @@ describe('all tests for your functions', () => {
   // reverseLettersInPlace
   describe('reverseLettersInPlace tests', () => {
     const subFunc = allFunctions.reverseLettersInPlace;
+    it('should be a function', function() {
+      expect(subFunc).to.be.an.instanceOf(Function);
+    });
     it('should output a string', () => {
       assert.isString(subFunc('Hello world'));
     });
@@ -114,13 +139,14 @@ describe('all tests for your functions', () => {
   // allSimpleCombinations
   describe('allSimpleCombinations tests', () => {
     const subFunc = allFunctions.allSimpleCombinations;
+    it('should be a function', function() {
+      expect(subFunc).to.be.an.instanceOf(Function);
+    });
     it('should output an array', () => {
       assert.isArray(subFunc('test'));
     });
     it('should create an array with all simple combinations', () => {
       assert.deepEqual(subFunc('test'), ['t', 'te', 'tes', 'test', 'e', 'es', 'est', 's', 'st', 't']);
-    });
-    it('should create an array with all simple combinations', () => {
       assert.deepEqual(subFunc('cat'), ['c', 'ca', 'cat', 'a', 'at', 't']);
     });
   });
@@ -128,6 +154,9 @@ describe('all tests for your functions', () => {
   // alphabeticalOrder
   describe('alphabeticalOrder tests', () => {
     const subFunc = allFunctions.alphabeticalOrder;
+    it('should be a function', function() {
+      expect(subFunc).to.be.an.instanceOf(Function);
+    });
     it('should output a string', () => {
       assert.isString(subFunc('donuts'));
     });
@@ -140,6 +169,9 @@ describe('all tests for your functions', () => {
   // returnLongestWord
   describe('returnLongestWord tests', () => {
     const subFunc = allFunctions.returnLongestWord;
+    it('should be a function', function() {
+      expect(subFunc).to.be.an.instanceOf(Function);
+    });
     it('should output a string', () => {
       assert.isString(subFunc('California Über Alles'));
     });
@@ -152,6 +184,9 @@ describe('all tests for your functions', () => {
   // isPrime
   describe('isPrime tests', () => {
     const subFunc = allFunctions.isPrime;
+    it('should be a function', function() {
+      expect(subFunc).to.be.an.instanceOf(Function);
+    });
     it('should output a boolean', () => {
       assert.isBoolean(subFunc(5, true));
     });
@@ -168,6 +203,12 @@ describe('all tests for your functions', () => {
   // returnCoinBreakdown
   describe('returnCoinBreakdown tests', (num) => {
     const subFunc = allFunctions.returnCoinBreakdown;
+    it('should be a function', function() {
+      expect(subFunc).to.be.an.instanceOf(Function);
+    });
+    it('should output an object', () => {
+      assert.isObject(subFunc(33));
+    });
     it('should return an object that contains the number of coins that equal the input number', () => {
       assert.deepEqual(subFunc(46), {25:1, 10:2, 5:0, 1:1});
       assert.deepEqual(subFunc(19), {25:0, 10:1, 5:1, 1:4});
@@ -176,9 +217,18 @@ describe('all tests for your functions', () => {
   });
 
   // countVowels
-  xdescribe('countVowels tests', (str) => {
+  describe('countVowels tests', (str) => {
     const subFunc = allFunctions.countVowels;
-
+    it('should be a function', function() {
+      expect(subFunc).to.be.an.instanceOf(Function);
+    });
+    it('should output a number', () => {
+      assert.isNumber(subFunc('banana'));
+    });
+    it('should return the number of vowels', () => {
+      assert.equal(subFunc('apple'), 2);
+      assert.equal(subFunc('tomato'), 3);
+    });
   });
 
   // forEach
