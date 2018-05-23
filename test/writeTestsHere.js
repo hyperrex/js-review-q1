@@ -1,6 +1,5 @@
 const allFunctions = require('../index');
 const assert = require('chai').assert;
-const expect = require('chai').expect;
 
 describe('all tests for your functions', () => {
   // add
@@ -293,8 +292,7 @@ describe('all tests for your functions', () => {
       const returnValue = forEach([1, 2, 3], function(num) {
         return num * 2;
       });
-      expect(returnValue).to.not.exist;
-      // assert.notExists(returnValue); WHY DOES THIS METHOD NOT EXIST???
+      assert.isUndefined(returnValue);
     });
     it('should iterate through an array', () => {
       const output = [];
