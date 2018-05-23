@@ -162,7 +162,7 @@ function returnCoinBreakdown(num) {
   output[1] = spareChange;
   return output;
 }
-//returnCoinBreakdown(46) => {25:1,10:1,5:2,1:1}
+//returnCoinBreakdown(46) => {25:1,10:2,5:0,1:1}
 //returnCoinBreakdown(19) => {25:0,10:1,5:1,1:4}
 
 /**
