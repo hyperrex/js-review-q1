@@ -229,6 +229,10 @@ describe('all tests for your functions', () => {
       assert.equal(subFunc('apple'), 2);
       assert.equal(subFunc('tomato'), 3);
     });
+    it('should be case-insensitive', () => {
+      assert.equal(subFunc('Apple'), 2);
+      assert.equal(subFunc('tomatO'), 3);
+    });
   });
 
   // forEach
