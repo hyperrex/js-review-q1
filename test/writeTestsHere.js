@@ -294,7 +294,7 @@ describe('all tests for your functions', () => {
         return num * 2;
       });
       expect(returnValue).to.not.exist;
-      // assert.notExists(returnValue);
+      // assert.notExists(returnValue); WHY DOES THIS METHOD NOT EXIST???
     });
     it('should iterate through an array', () => {
       const output = [];
