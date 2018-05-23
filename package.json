@@ -20,7 +20,8 @@
     "chai-iterator": "^1.1.4"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^5.2.0"
-  }
+  "chai": "*",
+  "mocha": "*"
+}, "//": "mocha is our preference, but you can use any test runner you like"
+
 }
