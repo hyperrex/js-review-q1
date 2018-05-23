@@ -172,7 +172,7 @@ function returnCoinBreakdown(num) {
  * @return: number
  **/
 function countVowels(str) {
-  return str.match(/[AEIOUaeiou]/g).length;
+  return str.match(/[aeiou]/gi).length;
 }
 //countVowels('apple')  => 2
 //countVowels('tomato') => 3
